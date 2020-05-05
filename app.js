@@ -2,6 +2,7 @@ const express = require('express')
 const app = express()
 const exphdbs = require('express-handlebars')
 const bodyParser = require('body-parser')
+const garbagelangGenerator = require('./garbagelang-generator')
 
 const hostname = '127.0.0.1'
 const port = 3000
@@ -13,6 +14,11 @@ app.use(express.static('public'))
 
 app.get('/', (req, res) => {
 	res.render('home')
+})
+
+app.post('/', (req, res) => {
+	const profession = garbagelangGenerator(req.body)
+	res.render('home', { profession })
 })
 
 app.listen(port, hostname, () => {
