@@ -1,12 +1,14 @@
 <div class="cover"></div>
 <div class="title" style="font-size: 2.5rem;">你想對誰說幹話?</div>
 <div class="container">
-  <div class="form d-flex justify-content-center">
-    <div class="form-check form-check-inline">
+  <form action="/" method="post" class="d-flex justify-content-center" id="options">
+    <div class="form-check form-check-inline mr-0">
       <label class="form-check-label" for="engineer">
         <div class="card text-center">
-          <img src="https://assets-lighthouse.s3.amazonaws.com/uploads/image/file/5668/angry-developer.jpg"
-            class="card-img-top" style="max-width:220px; height:100%;" alt="engineer">
+          <div class="card-body p-0">
+            <img src="https://assets-lighthouse.s3.amazonaws.com/uploads/image/file/5668/angry-developer.jpg"
+              class="card-img-top" alt="engineer">
+          </div>
           <div class="card-footer">
             <input class="form-check-input" type="radio" name="profession" id="engineer" value="engineer">
             工程師
@@ -14,11 +16,13 @@
         </div>
       </label>
     </div>
-    <div class="form-check form-check-inline">
+    <div class="form-check form-check-inline mx-5">
       <label class="form-check-label" for="designer">
         <div class="card text-center">
-          <img src="https://assets-lighthouse.s3.amazonaws.com/uploads/image/file/5667/angry-designer.jpg"
-            class="card-img-top" style="max-width:220px; height:100%;" alt="engineer">
+          <div class="card-body p-0">
+            <img src="https://assets-lighthouse.s3.amazonaws.com/uploads/image/file/5667/angry-designer.jpg"
+              class="card-img-top" alt="engineer">
+          </div>
           <div class="card-footer">
             <input class="form-check-input" type="radio" name="profession" id="designer" value="designer">
             設計師
@@ -29,8 +33,10 @@
     <div class="form-check form-check-inline">
       <label class="form-check-label" for="entrepreneur">
         <div class="card text-center">
-          <img src="https://assets-lighthouse.s3.amazonaws.com/uploads/image/file/5669/angry-founder.jpg"
-            class="card-img-top" style="max-width:220px; height:100%;" alt="engineer">
+          <div class="card-body p-0">
+            <img src="https://assets-lighthouse.s3.amazonaws.com/uploads/image/file/5669/angry-founder.jpg"
+              class="card-img-top" alt="engineer">
+          </div>
           <div class="card-footer">
             <input class="form-check-input" type="radio" name="profession" id="entrepreneur" value="entrepreneur">
             創業家
@@ -38,5 +44,13 @@
         </div>
       </label>
     </div>
+  </form>
+  <div class="d-flex justify-content-center my-2">
+    <button type="submit" class="btn btn-warning" form="options">產生幹話</button>
   </div>
+  {{#if profession}}
+  <div class="alert alert-success text-center" role="alert">
+    {{profession}}
+  </div>
+  {{/if}}
 </div>
