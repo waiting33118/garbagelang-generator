@@ -9,6 +9,7 @@ const port = 3000
 app.engine('handlebars', exphdbs({ defaultLayout: 'main' }))
 app.set('view engine', 'handlebars')
 app.use(bodyParser.urlencoded({ extended: true }))
+app.use(express.static('public'))
 
 app.get('/', (req, res) => {
 	res.render('home')
