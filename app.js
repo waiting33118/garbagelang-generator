@@ -17,8 +17,8 @@ app.get('/', (req, res) => {
 })
 
 app.post('/', (req, res) => {
-	const profession = garbagelangGenerator(req.body)
-	res.render('home', { profession })
+	const sentence = garbagelangGenerator(req.body)
+	res.render('home', { sentence })
 })
 
 app.listen(port, hostname, () => {
